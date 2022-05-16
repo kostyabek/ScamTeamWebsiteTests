@@ -16,7 +16,7 @@ namespace ScamTeamWebsiteTests
         [OneTimeSetUp]
         public void Setup()
         {
-            _driver = new ChromeDriver(".");
+            _driver = new ChromeDriver("/home/kostyabek/");
             _navigation = _driver.Navigate();
             _driverOptions = _driver.Manage();
 
