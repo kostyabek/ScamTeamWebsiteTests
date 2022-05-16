@@ -1,6 +1,4 @@
 using NUnit.Framework;
-using WebDriverManager;
-using WebDriverManager.DriverConfigs.Impl;
 
 namespace ScamTeamWebsiteTests
 {
@@ -18,10 +16,7 @@ namespace ScamTeamWebsiteTests
         [OneTimeSetUp]
         public void Setup()
         {
-            var chromeDriverPath = new DriverManager()
-                .SetUpDriver(new ChromeConfig());
-
-            _driver = new ChromeDriver(chromeDriverPath);
+            _driver = new ChromeDriver(".");
             _navigation = _driver.Navigate();
             _driverOptions = _driver.Manage();
 
