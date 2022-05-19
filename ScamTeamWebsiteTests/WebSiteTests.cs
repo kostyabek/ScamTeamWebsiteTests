@@ -1,4 +1,6 @@
+using System.IO;
 using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 
 namespace ScamTeamWebsiteTests
 {
@@ -16,7 +18,9 @@ namespace ScamTeamWebsiteTests
         [OneTimeSetUp]
         public void Setup()
         {
-            _driver = new ChromeDriver("/home/kostyabek/");
+            _driver = File.Exists("chromedriver.exe") ?
+                new ChromeDriver() :
+                new RemoteWebDriver(new Uri("http://selenium__standalone-chrome:4444/wd/hub"), new ChromeOptions());
             _navigation = _driver.Navigate();
             _driverOptions = _driver.Manage();
 
