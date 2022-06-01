@@ -19,7 +19,7 @@ namespace ScamTeamWebsiteTests
         public void Setup()
         {
             _driver = File.Exists("chromedriver.exe") ?
-                new ChromeDriver() :
+                new ChromeDriver(@"..\..\..\") :
                 new RemoteWebDriver(new Uri("http://selenium__standalone-chrome:4444/wd/hub"), new ChromeOptions());
             _navigation = _driver.Navigate();
             _driverOptions = _driver.Manage();
